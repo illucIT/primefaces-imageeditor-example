@@ -1,3 +1,5 @@
 # primefaces-imageeditor-example
 
-Example for Project primefaces-imageeditor
+Example Web Project for JSF Component `illucIT/primefaces-imageeditor`.
+
+![Screenshot](screenshot.png)

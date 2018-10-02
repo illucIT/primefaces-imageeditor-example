@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:f="http://java.sun.com/jsf/core" xml:lang="de" lang="de"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ie="http://www.illucit.com/jsf/imageeditor">
@@ -10,15 +9,15 @@
 <f:view>
 
 	<h:head>
-		<title>Image Editor Example</title>
+		<title>${imageEditorBean.title}</title>
 	</h:head>
 	<h:body>
 
-		<h1>Image Editor Example</h1>
+		<h1>${imageEditorBean.title}</h1>
 
 		<h:form id="exampleForm">
 
-			<p:growl id="pageGrowl" showDetail="true" />
+			<p:growl id="pageGrowl" showDetail="true" autoUpdate="true" />
 
 			<ie:imageEditor id="exampleImageEditor" widgetVar="imageEd"
 				value="#{imageEditorBean.image}" initialColor="ffff00"

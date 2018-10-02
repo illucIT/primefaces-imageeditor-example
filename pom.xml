@@ -41,14 +41,6 @@
             <organization>illucIT Software GmbH</organization>
             <organizationUrl>https://www.illucit.com</organizationUrl>
         </developer>
-        <developer>
-            <id>danielwieth</id>
-            <name>Daniel Wieth</name>
-            <email>wieth@illucit.com</email>
-            <url>https://github.com/danielwieth</url>
-            <organization>illucIT Software GmbH</organization>
-            <organizationUrl>https://www.illucit.com</organizationUrl>
-        </developer>
     </developers>
 
     <properties>
@@ -117,14 +109,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.2.2</version>
-                <configuration>
-                    <webappDirectory>target/webapp</webappDirectory>
-                    <webResources>
-                        <resource>
-                            <directory>src/main/webapp</directory>
-                        </resource>
-                    </webResources>
-                </configuration>
             </plugin>
         </plugins>
     </build>

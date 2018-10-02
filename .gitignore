@@ -1,3 +1,4 @@
 # IntelliJ project files
 .idea/
 target/
+/src/main/resources/rebel.xml
