@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<display-name>Immobrain KundenGUI für Abfragen und Analysen</display-name>
+
+	<resource-env-ref>
+		<!-- Enable Weld CDI, also needs META-INF/context.xml entry -->
+		<!-- https://musingsinjava.wordpress.com/2014/11/02/enabling-jsf-2-2-and-cdi-1-2-on-tomcat-8/ -->
+		<resource-env-ref-name>BeanManager</resource-env-ref-name>
+		<resource-env-ref-type>javax.enterprise.inject.spi.BeanManager</resource-env-ref-type>
+	</resource-env-ref>
+
+	<context-param>
+		<param-name>com.sun.faces.enableMissingResourceLibraryDetection</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+		<param-value>.xhtml</param-value>
+	</context-param>
+
+	<!-- http://stackoverflow.com/questions/8072311/adding-hform-causes-java-lang-illegalstateexception-cannot-create-a-session -->
+	<!-- https://developer.jboss.org/thread/202563?tstart=0&_sscc=t -->
+	<context-param>
+		<param-name>com.sun.faces.writeStateAtFormEnd</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	<!-- http://stackoverflow.com/questions/8072311/adding-hform-causes-java-lang-illegalstateexception-cannot-create-a-session -->
+	<context-param>
+		<param-name>javax.faces.FACELETS_BUFFER_SIZE</param-name>
+		<param-value>262140</param-value>
+	</context-param>
+
+
+	<context-param>
+		<!-- dadurch werden commentare in den gerenderten html seiten entfernt. 
+			die machen sonst probleme mit manchen js bereichen -->
+		<param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<!-- Set the project stage to "Development", "UnitTest", "SystemTest", or 
+		"Production". An optional parameter that makes troubleshooting errors much 
+		easier. You should remove this context parameter before deploying to production! -->
+	<context-param>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+	</context-param>
+	<context-param>
+		<!-- Required to be server for PrimeFaces uploadFile <param-name>javax.faces.STATE_SAVING_METHOD</param-name> 
+			<param-value>server</param-value> BalusC: So, setting to client increases 
+			the network bandwidth usage but decreases the server memory usage and setting 
+			to server does the other way round. Setting to client has however an additional 
+			functional advantage: it prevents ViewExpiredExceptions when the session 
+			has expired or when the client opens too many views. -->
+		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+		<param-value>server</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>uploadDirectory</param-name>
+		<param-value>/tmp</param-value>
+	</context-param>
+
+	<context-param>
+		<!-- http://stackoverflow.com/questions/2689245/fconvertdatetime-displays-wrong-date -->
+		<param-name>javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
+	
+	<session-config>
+		<!-- Session timeout interval in minutes -->
+		<session-timeout>300</session-timeout>
+		<tracking-mode>COOKIE</tracking-mode>
+	</session-config>
+	
+	<mime-mapping>
+		<extension>.html</extension>
+		<mime-type>text/xhtml</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>.xhtml</extension>
+		<mime-type>text/xhtml</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>woff2</extension>
+		<mime-type>font/woff2</mime-type>
+	</mime-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+</web-app>
