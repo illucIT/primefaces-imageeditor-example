@@ -11,6 +11,8 @@ import javax.inject.Named;
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 @SessionScoped
 @Named
