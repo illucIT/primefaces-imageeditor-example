@@ -48,7 +48,7 @@
         <scm.connection>git@github.com:illucIT/primefaces-imageeditor-example.git</scm.connection>
         <scm.url>https://github.com/illucIT/primefaces-imageeditor-example</scm.url>
 
-        <version.imageeditor>2.1.0</version.imageeditor>
+        <version.imageeditor>2.2.0</version.imageeditor>
         <version.jsf>2.3.7</version.jsf>
         <version.servletapi>3.1.0</version.servletapi>
 

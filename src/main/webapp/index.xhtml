@@ -17,7 +17,9 @@
 
 		<h:form id="exampleForm">
 
-			<p:growl id="pageGrowl" showDetail="true" autoUpdate="true" />
+			<p:growl id="pageGrowl" showDetail="true">
+				<p:autoUpdate/>
+			</p:growl>
 
 			<ie:imageEditor id="exampleImageEditor" widgetVar="imageEd"
 				value="#{imageEditorBean.image}" initialColor="ffff00"
