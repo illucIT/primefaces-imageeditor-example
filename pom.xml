@@ -7,7 +7,7 @@
 
     <groupId>com.illucit</groupId>
     <artifactId>primefaces-imageeditor-example</artifactId>
-    <version>1.1.0</version>
+    <version>3.0.0</version>
     <packaging>war</packaging>
 
     <name>PrimeFaces ImageEditor Example</name>
@@ -48,8 +48,8 @@
         <scm.connection>git@github.com:illucIT/primefaces-imageeditor-example.git</scm.connection>
         <scm.url>https://github.com/illucIT/primefaces-imageeditor-example</scm.url>
 
-        <version.imageeditor>2.2.0</version.imageeditor>
-        <version.jsf>2.3.7</version.jsf>
+        <version.imageeditor>3.0.0</version.imageeditor>
+        <version.jsf>2.3.9</version.jsf>
         <version.servletapi>3.1.0</version.servletapi>
 
         <!-- maven-compiler-plugin -->
@@ -75,7 +75,7 @@
         <dependency>
             <groupId>org.jboss.weld.servlet</groupId>
             <artifactId>weld-servlet</artifactId>
-            <version>2.4.4.Final</version>
+            <version>2.4.8.Final</version>
         </dependency>
 
         <!-- JSF -->
